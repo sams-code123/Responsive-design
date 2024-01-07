@@ -1,0 +1,683 @@
+/*
+ * Lay this page out - make it responsive, flex, position and media queries where needed.
+ *
+ * Colors-
+ * Green: #14a96d
+ * White: #fff
+ * Light gray: #f4f5f6
+ * Border gray: #cfd7de
+ * Dark text: #1b1f23
+ * Lighter text: #66727c
+ * Blue for links: #06748a
+ * Blue for hovered links: #033641
+ */
+
+/* Globals */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Cabin', sans-serif;
+  }
+  
+  
+  :root {
+    --green: #14a96d;
+    --white: #fff;
+    --light-gray: #f4f5f6;
+    --border-gray: #cfd7de;
+    --dark-text: #1b1f23;
+    --lighter-text: #66727c;
+    --blue-for-links: #06748a;
+    --blue-for-hovered-links: #033641;
+    --content-wrapper-width: 1170px;
+  }
+  
+  
+  a {
+    text-decoration: none;
+  }
+  
+  nav ul li ul li {
+    border: 1px solid; 
+    background: white;
+  }
+  
+  /* all this code here is for the nav menu at the top right of the mobile page*/
+  li {
+    display: block;
+    transition-duration: 0.5s;
+    
+   }
+   
+   li:hover {
+     cursor: pointer;
+   }
+   
+   ul li ul {
+     visibility: hidden;
+     opacity: 0;
+     position: absolute;
+     transition: all 0.5s ease;
+     margin-top: .05rem;
+     right: 10px;
+     display: none;
+   }
+   
+   ul li:hover > ul,
+   ul li ul:hover {
+     visibility: visible;
+     opacity: 1;
+     display: block;
+   }
+   
+   ul li ul li {
+     clear: both;
+     width: 100%;
+   }
+  
+  
+   ul li:hover > ul,
+   ul li:focus-within > ul,
+   ul li ul:hover {
+     visibility: visible;
+     opacity: 1;
+     display: block;
+   }
+  
+  
+  
+  
+  
+  
+  
+  
+  /* this is the mobile version */
+  /* assign the first class here to <main class="mobile">  */
+  
+  @media screen and (max-width: 699px){
+  
+    /* first make sure to hide the other def main{} */
+     /* it was hard to figure out i needed to do display: none; */
+    .desktop {
+      display: none;
+    }
+  
+    .mobile {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .sectionM1 img {
+      height: 2.9rem; 
+      align-self: left;
+    }
+  
+    .sectionM1 {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      /* height: 60px; */
+      /* border: 2px solid;  */
+      justify-content: space-between;
+      align-items: center;
+      justify-self: center;
+    }
+  
+    nav {
+      display: flex;
+      margin-right: 60px;
+      font-size: 1.2rem;
+    }
+  
+    .sectionM2 {
+      display: flex;
+      flex-direction: column;
+      width: 96%;
+      padding: 2rem, 0;
+      /* border: 2px solid;  */
+      justify-self: center;
+      align-self: center;
+      margin-top: 2rem;
+    }
+  
+    .sectionM2 h4 {
+      font: bolder;
+      justify-self: flex-start;
+    }
+  
+    .sectionM2 button {
+      border-radius: 5px;
+      background-color: #14a96d;
+      width: 100%;
+      /* height: 50px;  */
+      padding: 1rem;
+      border: transparent; /* this line is neat because I didnt notice buttons have default borders that look awful */
+      align-self: center;
+    }
+    .sectionM2 button a {
+      color: white;
+    }
+   
+    .sectionM3 {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      /* height: 70px; */
+      margin: 1rem;
+      /* border: 2px solid;  */
+      justify-self: center;
+      align-self: center;
+    }
+    .sectionM3 h2 {
+      display: flex;
+      font: bolder;
+      justify-self: center;
+      align-self: center;
+    }
+    
+    .sectionM4 {
+      display: flex;
+      flex-direction: row;
+      width: 85%;
+      /* height: 400px; */
+      /* border: 2px solid; */
+      align-self: center;
+    }
+  
+    .pictures {
+      display: flex;
+      width: 10%;
+      /* height: 400px; */
+      /* border: 2px solid black; */
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  
+    .words {
+      display: flex;
+      width: 100%;
+      /* height: 400px;  */
+      /* border: 2px solid black; */
+      flex-direction: column;
+      justify-content: space-around;
+      margin-left: 10px;
+    }
+    .words div {
+      display: flex;
+      width: 100%;
+      /* height: 50px; */
+      margin: 0.5rem;
+      /* border: 1px solid; */
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 0px;
+    }
+    .words div h4 {
+      margin-bottom: 0px;
+      /* margin-top: 15px; */
+    }
+    .words div p {
+      margin-top: 2px;
+      color: #1b1f23;
+    }
+  
+    .sectionM5 {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      /* height: 270px; */
+      border: 2px solid;
+      border-radius: 5px;
+      align-self: center;
+    }
+  
+    .shield {
+      display: flex;
+      width: 100%;
+      height: 80px;
+      /* border: 2px solid black; */
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background-color: lightgrey;
+    }
+    .shield img {
+      height: 2.5rem;
+      margin-right: .7rem;
+    }
+    .sectionM5 ul {
+      list-style: none;
+      border: transparent;
+      background: transparent;
+    }
+    .sectionM5 ul li:before {
+      content: '✔️';
+      border: none; 
+      color: #14a96d;
+    }
+    .sectionM5 ul li {
+      font:bold;
+      color: grey;
+      margin-top:1rem;
+    }
+    .sectionM5 button {
+      border-radius: 5px;
+      background-color: #14a96d;
+      width: 90%;
+      /* height: 50px;  */
+      padding: 1rem;
+      border: transparent; /* this line is neat because I didnt notice buttons have default borders that look awful */
+      align-self: center;
+      margin-bottom: 1rem;
+    }
+    .sectionM5 button a {
+      color: white;
+    }
+    .sectionM6 {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      padding: 2rem, 0;
+      /* border: 2px solid;  */
+      justify-self: center;
+      align-self: center;
+      margin-top: .5rem;
+    }
+    .sectionM6 p {
+      color: grey;
+      font-size: .8rem;
+    }
+  
+  
+    .sectionM7 {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-self: center;
+      align-self: center;
+      margin-top: 5rem;
+      border-top: 1px solid lightgrey;
+    }
+    .sectionM7 h2 {
+      padding-left: 1rem;
+      margin-bottom: .5rem;
+    }
+    .sectionM7 p {
+      margin-top: .5rem;
+      padding-left: 1rem;
+    }
+    /* this thing is called a wrapper and allows me to overflow the image in the div wrapper  */
+    /* notice to not use flexbox here as we need to focus in on a very arbitrary spot */
+    .sectionM7 div {
+      overflow: clip;
+      height: 15rem;
+      margin-top: 3rem;
+    }
+    .sectionM7 div img {
+      object-fit: none;  /* this lets me move around the image as there is no fit specified */
+      position: relative;
+      right: 21rem;
+      bottom: 15rem;
+    }
+  
+    .sectionM8 {
+      display: flex;
+      flex-direction: column;
+      width: 96%;
+      padding: 2rem, 0;
+      /* border: 2px solid;  */
+      justify-self: center;
+      align-self: center;
+      margin-top: 4rem;
+    }
+    .sectionM8 h2 {
+      margin-left: 2rem;
+    }
+  
+    .sectionM9 {
+      display: flex;
+      flex-direction: row;
+      width: 85%;
+      /* height: 400px; */
+      /* border: 2px solid; */
+      align-self: center;
+      margin-bottom: 4rem;
+      margin-top: 2rem;
+    }
+  
+    .pictures2 {
+      display: flex;
+      width: 10%;
+      /* height: 400px; */
+      /* border: 2px solid black; */
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  
+    .words2 {
+      display: flex;
+      width: 100%;
+      /* height: 400px;  */
+      /* border: 2px solid black; */
+      flex-direction: column;
+      justify-content: space-around;
+      margin-left: 10px;
+    }
+    .words2 div {
+      display: flex;
+      width: 100%;
+      /* height: 50px; */
+      margin: 0.5rem;
+      /* border: 1px solid; */
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 0px;
+    }
+    .words2 div h4 {
+      margin-bottom: 0px;
+      /* margin-top: 15px; */
+    }
+    .words2 div p {
+      margin-top: 2px;
+      color: #1b1f23;
+    }
+  
+  
+    .subsection2 {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      /* height: 270px; */
+      border: 2px solid;
+      border-radius: 5px;
+      align-self: center;
+    }
+  
+    .shield {
+      display: flex;
+      width: 100%;
+      height: 80px;
+      /* border: 2px solid black; */
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background-color: lightgrey;
+    }
+    .shield img {
+      height: 2.5rem;
+      margin-right: .7rem;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* this is the desktop version */
+  /* assign the first class here to <main class="desktop">  */
+  
+  @media screen and (min-width: 700px) {
+  
+     /* first make sure to hide the other def main{} */
+     /* it was hard to figure out i needed to do display: none; */
+     .mobile {
+      display: none;
+    }
+  
+  
+    .desktop {
+      font-family: 'Cabin', sans-serif;
+      font-size: 100%;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+  
+  
+    h1 {
+      display: flex;
+      justify-self: flex-start;
+    } 
+  
+    .sectionD1 {
+      display: flex;
+      flex-direction: row;
+      width: 70%;
+      height: 4rem;
+      justify-content: space-between;
+      align-items: center;
+      align-self: center;
+    }
+  
+    .sectionD1 nav img {
+      display: flex;
+      height: 50px;
+      margin-right: 5px;
+    }
+  
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    } 
+      
+    .sectionD2 {
+      height: 35rem;
+      margin-top: 0rem;
+      width: 100%;
+      overflow: hidden;
+    }
+  
+    /* liquid images */
+  .wrapper-pic {
+    width: 100%;
+    object-fit: cover;
+    text-align: right; /* this is how I got the image to hug the right side of the wrapper */
+  }
+  
+  /* there's a space on the right of the image I cant get rid of, is there a way to stretch the image further? */
+  /* this is how you make liquid images */
+  .wrapper-pic img {
+    max-width: 100%;
+  }
+   
+  
+  .sectionD3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+  }
+  
+  .sectionD4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    justify-content: space-between;
+  }
+  
+  .subsection1 {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    /* height: 14rem; */
+    align-self: center;
+    margin-bottom: 3rem;
+  }
+  
+  .pictures {
+    display: flex;
+    max-width: 10%;
+    /* height: 400px; */
+    /* border: 2px solid black; */
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .words {
+    display: flex;
+    width: 100%;
+    /* height: 400px;  */
+    /* border: 2px solid black; */
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 1rem;
+  }
+  .words div {
+    display: flex;
+    width: 100%;
+    /* height: 50px; */
+    /* border: 1px solid; */
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0px;
+  }
+  .words div h4 {
+    margin-bottom: 0px;
+    /* margin-top: 15px; */
+  }
+  .words div p {
+    margin-top: 2px;
+    color: #1b1f23;
+  }
+  
+  .sub-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+  }
+  
+  .subsection2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* height: 270px; */
+    border: 2px solid grey;
+    border-radius: .6rem;
+    align-self: center;
+  }
+  
+  .shield {
+    display: flex;
+    width: 100%;
+    /* height: 5rem; */
+    /* border: 2px solid black; */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+    border-radius: .5rem;
+  }
+  .shield img {
+    height: 2.5rem;
+    margin-right: .7rem;
+  }
+  .subsection2 ul {
+    list-style: none;
+    border: transparent;
+    background: transparent;
+  }
+  .subsection2 ul li:before {
+    content: '✔️';
+    border: none; 
+    color: #14a96d;
+  }
+  .subsection2 ul li {
+    font:bold;
+    color: grey;
+    margin-top:1.7rem;
+  }
+  .subsection2 button {
+    border-radius: 5px;
+    background-color: #14a96d;
+    width: 90%;
+    /* height: 50px;  */
+    padding: 1rem;
+    border: transparent; /* this line is neat because I didnt notice buttons have default borders that look awful */
+    align-self: center;
+    margin-bottom: 1rem;
+  }
+  .subsection2 button a {
+    color: white;
+  }
+  .subsection3 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem, 0;
+    /* border: 2px solid;  */
+    justify-self: center;
+    align-self: center;
+    margin-top: .1rem;
+  }
+  .subsection3 p {
+    color: grey;
+    font-size: .8rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .sectionD5 {
+    display: block;
+    width: 80%;
+    background: url(../img/hero-2.webp);
+    height: 31rem;
+  }
+  
+  .sectionD5 div {
+    position: relative;
+    width: 30%;
+    bottom: 2rem;
+    left: 2rem;
+    background: white;
+    border: 1px solid rgb(201, 195, 195);
+    padding: 2rem;
+  }
+  
+  .sectionD6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+  }
+  
+  
+  .sectionD7 {
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    justify-content: space-around;
+    margin-bottom: 5rem;
+  }
+  
+  .D7sub1 {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .D7sub1 img {
+    width: 5rem;
+  }
+  
+  .D7sub1 p {
+    color: grey;
+    margin-top: .1rem;
+  }
+  
+  
+  }
+  
+  
+  
+  
